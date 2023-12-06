@@ -1,8 +1,294 @@
-﻿@{
+﻿@model List<ProductModel>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: url('../pictures/L6.jpg');
+        background-animation: changeBackground 15s infinite;
+        background-size: cover;
+        background-position: center;
+        transition: background 1s ease;
+    }
+
+    h1 {
+        font-size: 50px;
+        color: white;
+        margin-bottom: 20px;
+        margin-top: 200px;
+        font-family: 'Segoe UI';
+        font-weight: bolder;
+    }
+
+    .search-container {
+        display: flex;
+        max-width: 400px;
+        width: 100%;
+    }
+
+    #locationInput {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px 0 0 5px;
+    }
+
+    #searchButton {
+        background-color: white;
+        color: #fff;
+        cursor: pointer;
+    }
+
+        #searchButton img {
+            width: 30px;
+            height: 30px;
+        }
+
+        #searchButton:hover {
+            transform: scale(1.1);
+        }
+
+        #searchButton:active {
+            transform: scale(0.9);
+        }
+
+    .image {
+        position: absolute;
+        width: 109%;
+        height: fit-content;
+        margin-left: -185px;
+        background-size: cover;
+        background-image: url('../pictures/bg.png');
+    }
+
+    /* Add styles for the container of product boxes */
+    .product-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .product-line {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .product-box {
+        background: white;
+        padding: 10px;
+        margin: 10px;
+        margin-left: 1px;
+        width: 330px;
+        box-sizing: border-box;
+        
+    }
+
+        .product-box h3 {
+            font-size: 15px; /* Adjust the font size as needed */
+            color: black; /* Set the color of the product name */
+            margin-top: 10px; /* Adjust the top margin as needed */
+            font-family: 'Sans Serif Collection';
+            text-align: left; /* Center-align the product name */
+        }
+
+        .product-box p {
+            font-size: 18px; /* Adjust the font size as needed */
+            color: #EB5757; /* Set the color of the prices */
+            margin-top: 5px; /* Adjust the top margin as needed */
+            font-family: 'Arial'; /* Specify the desired font family */
+            font-weight:bold;
+            text-align: left; /* Left-align the prices */
+        }
+
+    .product-image {
+        width: 100%;
+        height: 130px;
+        background-size: cover;
+    }
+
+    .star-ratings {
+        color: black;
+    }
+
+    .add-to-cart-button {
+       
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s ease;
+        margin-left: auto; /* Push the button to the right by setting margin-left to auto */
+        display: block;
+    }
+
+        .add-to-cart-button:hover {
+            background-color: darkred; /* Change the background color on hover */
+        }
+
+        .add-to-cart-button:active {
+            transform: scale(0.95); /* Add a slight scale effect when the button is pressed */
+        }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+<body>
+    <h1>
+        Good Day <br /> Where should we <br /> deliver your food today?
+    </h1>
+    <div class="search-container">
+        <input type="text" id="locationInput" placeholder="Type your location here...">
+        <button id="searchButton"><img src="pictures/s.png" alt="Location Icon"></button>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class='image'>
+        <div class="product-container">
+            <div class="product-line">
+                @foreach (var product in Model.Take(3))
+                {
+                    <div class="product-box">
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p> 
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                       
+                    </div>
+                }
+            </div>
+
+            <div class="product-line">
+                @foreach (var product in Model.Skip(3).Take(3))
+                {
+                    <div class="product-box">
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                       
+                    </div>
+                }
+            </div>
+
+            <div class="product-line">
+                @foreach (var product in Model.Skip(3).Take(3))
+                {
+                    <div class="product-box">
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                        
+                    </div>
+                }
+            </div>
+            <div class="product-line">
+                @foreach (var product in Model.Skip(3).Take(3))
+                {
+                    <div class="product-box">
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                       
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var images = ['../pictures/L1.png', '../pictures/L2.jpg', '../pictures/L3.png', '../pictures/L4.jpg', '../pictures/L5.jpg'];
+        var currentImageIndex = 0;
+
+        function changeBackground() {
+            document.body.style.background = 'url("' + images[currentImageIndex] + '")';
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center';
+        }
+
+        setInterval(changeBackground, 5000);
+    });
+
+    function addToCart(productName) {
+        alert(`Added ${productName} to the cart`);
+    }
+</script>
+</body>
