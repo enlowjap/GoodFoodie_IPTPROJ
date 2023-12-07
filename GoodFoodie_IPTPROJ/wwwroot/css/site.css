@@ -20,3 +20,208 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+
+h2.popular {
+    font-size: 50px;
+    color: white;
+    margin-top: 20px;
+    font-family: 'Segoe UI';
+    font-weight: bolder;
+    margin-left: 150px;
+    border-right: 4px solid white;
+    animation: cursor 1s infinite step-end, typing 15s infinite steps(25);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes cursor {
+    0%, 100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: white;
+    }
+}
+
+@keyframes typing {
+    0% {
+        width: 0ch
+    }
+    /*Text is hidden*/
+    30% {
+        width: 24ch;
+    }
+    /*The enitre header will be typed out*/
+    80% {
+        width: 25ch;
+    }
+    /*Text stays visible*/
+    90% {
+        width: 0ch;
+    }
+    /*Text is deleted*/
+    100% {
+        width: 0ch;
+    }
+    /*Text stays hidden*/
+}
+.circle {
+    position: absolute;
+    top: 10%;
+    left: 92%;
+    transform: translate(-50%,-50%);
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    color:white;
+    font-weight:bold;
+    text-align: center;
+    line-height: 100px;
+    font-family: sans-serif;
+    border-radius: 50%;
+    font-size: 15px;
+    &:hover
+
+{
+    cursor: pointer;
+}
+
+&::after, &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background: black;
+    border-radius: 50%;
+    z-index: -1;
+    animation: grow 1s ease-in-out infinite;
+}
+
+&::after {
+    background: black;
+    &::before
+
+{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background: black;
+    border-radius: 50%;
+    z-index: -1;
+    animation: grow 1s ease-in-out infinite;
+}
+
+}
+
+&::before {
+    background: black;
+    animation-delay: -0.5s;
+}
+
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(1,1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.8,1.8);
+        opacity: 0;
+    }
+}
+
+.mission-vision-section {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: -200px;
+    margin-bottom: 10px;
+    text-align: center;
+    max-width: 850px; /* Adjust the max-width as needed */
+    width: 80%; /* Adjust the width as needed */
+    border: 2px solid #000; /* Set a black border for the contact form container */
+    border-radius: 8px;
+}
+
+    .mission-vision-section h2 {
+        color: #333;
+        font-size: 3em; /* Adjust the font size as needed */
+        margin-bottom: 10px;
+        font-family: 'sans-serif';
+        font-weight: bold;
+    }
+
+    .mission-vision-section p {
+        color: #666;
+        font-size: 1.2em; /* Adjust the font size as needed */
+        line-height: 1.6;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-family: 'ui-rounded';
+    }
+
+.container-contact {
+    background-color: #fff; /* Set a white background for the contact form container */
+    border: 2px solid #000; /* Set a black border for the contact form container */
+    border-radius: 8px; /* Optional: Add rounded corners to the container */
+    padding: 20px; /* Add some padding inside the container */
+    max-width: 400px; /* Set a maximum width for the container */
+    margin-left: 950px;
+    margin-top: -555px;
+    margin-bottom: 16px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h3{
+    text-align:center;
+}
+label {
+    margin-bottom: 8px;
+    color: #333; /* Set label color to black */
+}
+
+input[type="text"],
+textarea {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #000; /* Set a black border for text input and textarea */
+    border-radius: 4px; /* Optional: Add rounded corners to the input and textarea */
+}
+
+input[type="submit"] {
+    background-color: #000; /* Set a black background for the submit button */
+    color: #fff; /* Set text color to white */
+    padding: 10px;
+    border: none;
+    border-radius: 4px; /* Optional: Add rounded corners to the button */
+    cursor: pointer;
+}
+
+    input[type="submit"]:hover {
+        background-color: #333; /* Change background color on hover */
+    }
+.h4, h4 {
+    font-size: 54px;
+    text-align: left;
+    color: darkred;
+    font-family: auto;
+    font-weight: bold;
+}

@@ -18,18 +18,18 @@ namespace GoodFoodie_IPTPROJ.Controllers
         {
             var products = new List<ProductModel>
         {
-                new ProductModel { ProductId = 1, ImageUrl = "pictures/L1.png", ProductName = "Product 1", Price = 19.99, StarRatings = 4 },
-                new ProductModel { ProductId = 2, ImageUrl = "pictures/L1.png", ProductName = "Product 2", Price = 19.99, StarRatings = 3 },
-                new ProductModel { ProductId = 3, ImageUrl = "pictures/L1.png", ProductName = "Product 3", Price = 19.99, StarRatings = 3 },
-                new ProductModel { ProductId = 4, ImageUrl = "pictures/L1.png", ProductName = "Product 4", Price = 19.99, StarRatings = 4 },
-                new ProductModel { ProductId = 5, ImageUrl = "pictures/L1.png", ProductName = "Product 5", Price = 19.99, StarRatings = 4 },
-                new ProductModel { ProductId = 6, ImageUrl = "pictures/L1.png", ProductName = "Product 6", Price = 19.99, StarRatings = 3 },
-                new ProductModel { ProductId = 7, ImageUrl = "pictures/L1.png", ProductName = "Product 7", Price = 19.99, StarRatings = 4 },
-                new ProductModel { ProductId = 8, ImageUrl = "pictures/L1.png", ProductName = "Product 8", Price = 19.99, StarRatings = 3 },
-                new ProductModel { ProductId = 9, ImageUrl = "pictures/L1.png", ProductName = "Product 9", Price = 19.99, StarRatings = 4 },
-                new ProductModel { ProductId = 10, ImageUrl = "pictures/L1.png", ProductName = "Product 10", Price = 19.99, StarRatings = 4 },
-                new ProductModel { ProductId = 11, ImageUrl = "pictures/L1.png", ProductName = "Product 11", Price = 19.99, StarRatings = 3 },
-                new ProductModel { ProductId = 12, ImageUrl = "pictures/L1.png", ProductName = "Product 12", Price = 19.99, StarRatings = 4 },
+                new ProductModel { ProductId = 1, ImageUrl = "pictures/CHEEZY HAWAIIAN.jpeg", ProductName = "CHEEZY HAWAIIAN", Price = 19.99, StarRatings = 4 },
+                new ProductModel { ProductId = 2, ImageUrl = "pictures/GRANDIOSA PIZZA.jpeg", ProductName = "GRANDIOSA", Price = 19.99, StarRatings = 3 },
+                new ProductModel { ProductId = 3, ImageUrl = "pictures/HAWAIIAN.jpeg", ProductName = "HAWAIIAN", Price = 19.99, StarRatings = 3 },
+                new ProductModel { ProductId = 4, ImageUrl = "pictures/Fried tacos.jpg", ProductName = "FRIED TACOS", Price = 19.99, StarRatings = 4 },
+                new ProductModel { ProductId = 5, ImageUrl = "pictures/Chicken tacos.jpg", ProductName = "CHICKEN TACOS", Price = 19.99, StarRatings = 4 },
+                new ProductModel { ProductId = 6, ImageUrl = "pictures/BBQ tacos.jpg", ProductName = "BBQ TACOS", Price = 19.99, StarRatings = 3 },
+                new ProductModel { ProductId = 7, ImageUrl = "pictures/KOREAN HOTDOG.jpeg", ProductName = "KOREAN HOTDOG", Price = 19.99, StarRatings = 4 },
+                new ProductModel { ProductId = 8, ImageUrl = "pictures/REGULAR HOTDOG.jpeg", ProductName = "REGULAR HOTDOG", Price = 19.99, StarRatings = 3 },
+                new ProductModel { ProductId = 9, ImageUrl = "pictures/SPICY CHILI HOTDOG.jpeg", ProductName = "SPICY CHILI HOTDOG", Price = 19.99, StarRatings = 4 },
+                new ProductModel { ProductId = 10, ImageUrl = "pictures/Cheese fries.jpg", ProductName = "CHEESE FRIES", Price = 19.99, StarRatings = 4 },
+                new ProductModel { ProductId = 11, ImageUrl = "pictures/Fries with bacon and cheese.jpg", ProductName = "FRIES WITH BACON AND CHEESE", Price = 19.99, StarRatings = 3 },
+                new ProductModel { ProductId = 12, ImageUrl = "pictures/BBQ FRIES.jpg", ProductName = "BBQ FRIES", Price = 19.99, StarRatings = 4 },
         };
 
             return View(products);
