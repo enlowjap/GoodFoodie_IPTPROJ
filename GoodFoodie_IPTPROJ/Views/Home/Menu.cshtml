@@ -1,6 +1,553 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<ProductModel>
+
 @{
+    ViewData["Title"] = "Menu Page";
+    
 }
-<p>menu</p>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: url('../pictures/bg.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .sidebar {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 1;
+        margin-top: -15px;
+        left: 0;
+        background-color: transparent;
+        padding-top: 20px;
+    }
+
+    .sidebar a {
+        padding: 8px 8px 8px 16px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #818181;
+        display: block;
+    }
+
+    .sidebar a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidebar input[type="text"] {
+        padding: 8px;
+        margin-top: 10px;
+        width: 80%;
+    }
+
+    .categories {
+        padding: 10px;
+        color: white;
+    }
+
+    .categories label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .categories input[type="checkbox"] {
+        margin-right: 8px;
+        cursor: pointer;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #000;
+        border-radius: 3px;
+        outline: none;
+        background-color: transparent;
+    }
+
+    .categories input[type="checkbox"]:checked {
+        background-color: #000;
+        border: 2px solid #000;
+    }
+
+
+
+    .image {
+        position: absolute;
+        width: 109%;
+        height: fit-content;
+        margin-left: -185px;
+        background-size: cover;
+       
+    }
+
+
+    .image-2 {
+        position: absolute;
+        width: 109%;
+        height: fit-content;
+        margin-left: -185px;
+        background-size: cover;
+       
+    }
+
+    /* Add styles for the container of product boxes */
+    .product-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        padding-left: 295px;
+    }
+
+    .product-line {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .product-box {
+        background: white;
+        padding: 10px;
+        margin: 10px;
+        margin-left: 1px;
+        width: 330px;
+        box-sizing: border-box;
+    }
+
+        .product-box h3 {
+            font-size: 15px; /* Adjust the font size as needed */
+            color: black; /* Set the color of the product name */
+            margin-top: 10px; /* Adjust the top margin as needed */
+            font-family: 'Sans Serif Collection';
+            text-align: left; /* Center-align the product name */
+        }
+
+        .product-box p {
+            font-size: 18px; /* Adjust the font size as needed */
+            color: #EB5757; /* Set the color of the prices */
+            margin-top: 5px; /* Adjust the top margin as needed */
+            font-family: 'Arial'; /* Specify the desired font family */
+            font-weight: bold;
+            text-align: left; /* Left-align the prices */
+        }
+
+    .product-image {
+        width: 100%;
+        height: 170px;
+        background-size: cover;
+    }
+
+    .star-ratings {
+        color: black;
+    }
+
+    .add-to-cart-button {
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s ease;
+        margin-left: auto; /* Push the button to the right by setting margin-left to auto */
+        display: block;
+        margin-top: -70px;
+    }
+
+        .add-to-cart-button:hover {
+            background-color: darkred; /* Change the background color on hover */
+        }
+
+        .add-to-cart-button:active {
+            transform: scale(0.95); /* Add a slight scale effect when the button is pressed */
+        }
+
+    .hidden {
+        display: none;
+    }
+
+    h3 {
+        font-family:'Franklin Gothic';
+        text-align: left;
+    }
+
+
+</style>
+
+<body>
+    <div class="sidebar">
+        <input type="text" placeholder="Search...">
+        <div class="categories">
+            <h3>Categories</h3>
+            <label><input type="checkbox" name="category" value="All"> All</label>
+            <label><input type="checkbox" name="category" value="Hotdogs"> Hotdogs</label>
+            <label><input type="checkbox" name="category" value="Sandwiches"> Sandwiches</label>
+            <label><input type="checkbox" name="category" value="Pizza"> Pizza</label>
+            <label><input type="checkbox" name="category" value="Tacos"> Tacos</label>
+            <label><input type="checkbox" name="category" value="Fries"> Fries</label>
+            <label><input type="checkbox" name="category" value="MilkTea"> Milk Tea</label>
+            <label><input type="checkbox" name="category" value="Special Meals"> Special Meals</label>
+            <!-- Add more categories as needed -->
+        </div>
+    </div>
+
+    <div class='image'>
+
+        <div class="product-container">
+
+            <div class="product-line">
+                @foreach (var product in Model.Take(3))
+                {
+                    <div class="product-box" data-category="@product.Category">
+                        <!-- Add data-category attribute here -->
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                    </div>
+                }
+            </div>
+            <div class="product-line">
+                @foreach (var product in Model.Skip(3).Take(3))
+                {
+                    <div class="product-box" data-category="@product.Category">
+                        <!-- Add data-category attribute here -->
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                    </div>
+                }
+            </div>
+            <div class="product-line">
+                @foreach (var product in Model.Skip(9).Take(3))
+                {
+                    <div class="product-box" data-category="@product.Category">
+                        <!-- Add data-category attribute here -->
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                    </div>
+                }
+            </div>
+            <div class="product-line">
+                @foreach (var product in Model.Skip(12).Take(3))
+                {
+                    <div class="product-box" data-category="@product.Category">
+                        <!-- Add data-category attribute here -->
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                    </div>
+                }
+            </div>
+            <div class="product-line">
+                @foreach (var product in Model.Skip(15).Take(3))
+                {
+                    <div class="product-box" data-category="@product.Category">
+                        <!-- Add data-category attribute here -->
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                    </div>
+                }
+            </div>
+            <div class="product-line">
+                @foreach (var product in Model.Skip(18).Take(3))
+                {
+                    <div class="product-box" data-category="@product.Category">
+                        <!-- Add data-category attribute here -->
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                    </div>
+                }
+            </div>
+            <div class="product-line">
+                @foreach (var product in Model.Skip(21).Take(3))
+                {
+                    <div class="product-box" data-category="@product.Category">
+                        <!-- Add data-category attribute here -->
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                    </div>
+                }
+            </div>
+            <div class="product-line">
+                @foreach (var product in Model.Skip(24).Take(3))
+                {
+                    <div class="product-box" data-category="@product.Category">
+                        <!-- Add data-category attribute here -->
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                    </div>
+                }
+            </div>
+            <div class="product-line">
+                @foreach (var product in Model.Skip(27).Take(3))
+                {
+                    <div class="product-box" data-category="@product.Category">
+                        <!-- Add data-category attribute here -->
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                    </div>
+                }
+            </div>
+            <div class="product-line">
+                @foreach (var product in Model.Skip(30).Take(3))
+                {
+                    <div class="product-box" data-category="@product.Category">
+                        <!-- Add data-category attribute here -->
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                    </div>
+                }
+            </div>
+            <div class="product-line">
+                @foreach (var product in Model.Skip(33).Take(3))
+                {
+                    <div class="product-box" data-category="@product.Category">
+                        <!-- Add data-category attribute here -->
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                    </div>
+                }
+            </div>
+            <div class="product-line">
+                @foreach (var product in Model.Skip(36).Take(3))
+                {
+                    <div class="product-box" data-category="@product.Category">
+                        <!-- Add data-category attribute here -->
+                        <div class="product-image" style="background-image: url('@product.ImageUrl')"></div>
+                        <div class="star-ratings">
+                            @if (product.StarRatings > 0)
+                            {
+                                @for (int i = 0; i < product.StarRatings; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                            }
+                            else
+                            {
+                                <p>No Ratings</p>
+                            }
+                        </div>
+                        <h3>@product.ProductName</h3>
+                        <div class="hidden" id="productId">@product.ProductId</div>
+                        <p>Php @product.Price</p>
+                        <button class="add-to-cart-button" onclick="addToCart('@product.ProductName')">+</button>
+                    </div>
+                }
+            </div>
+
+
+
+            <script>
+                function filterProducts(category) {
+                    var productContainers = document.querySelectorAll('.product-container');
+
+                    // Iterate through all product containers
+                    productContainers.forEach(function (container) {
+                        var productBoxes = container.querySelectorAll('.product-box');
+
+                        // Iterate through all product boxes in the container
+                        productBoxes.forEach(function (box) {
+                            var productCategory = box.getAttribute('data-category');
+
+                            // Show or hide the product box based on the selected category
+                            if (category === 'All' || productCategory === category) {
+                                box.classList.remove('hidden');
+                            } else {
+                                box.classList.add('hidden');
+                            }
+                        });
+                    });
+                }
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    var categoryCheckboxes = document.querySelectorAll('.categories input[type="checkbox"]');
+
+                    // Attach event listener to each category checkbox
+                    categoryCheckboxes.forEach(function (checkbox) {
+                        checkbox.addEventListener('change', function () {
+                            var selectedCategory = this.value;
+                            filterProducts(selectedCategory);
+                        });
+                    });
+                });
+            </script>
+
+
+</body>

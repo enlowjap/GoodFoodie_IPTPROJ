@@ -1,6 +1,148 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<ProductModel> 
+
 @{
+    ViewData["Title"] = "Cart Page";
 }
-<p>cart</p>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('../pictures/bg.png');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .cart-box {
+            width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto; /* Add this line to enable vertical scrolling */
+            max-height: 400px; /* Set a maximum height for the box */
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+            .item img {
+                max-width: 50px;
+                max-height: 50px;
+                margin-right: 10px;
+            }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+        }
+
+            .quantity button {
+                background-color: #4caf50;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                padding: 5px 10px;
+                cursor: pointer;
+                margin: 0 5px;
+            }
+
+        .subtotal {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cart-box">
+        @foreach (var product in Model)
+        {
+            <div class="item">
+                <img src="@product.ImageUrl" alt="Product Image">
+                <div>
+                    <p>@product.ProductName</p>
+                    <div class="quantity">
+                        <button onclick="decrementQuantity('@product.ProductId')">-</button>
+                        <span id="quantity@product.ProductId">@product.Quantity</span>
+                        <button onclick="incrementQuantity('@product.ProductId')">+</button>
+                    </div>
+                    <p>Price: $@product.Price</p>
+                </div>
+            </div>
+        }
+
+        <div class="subtotal">
+            <p>Subtotal:</p>
+            <p id="subtotal">$@Model.Sum(p => p.Quantity * p.Price)</p>
+        </div>
+
+        <button class="checkout-btn">Checkout</button>
+    </div>
+    <script>
+        // Create an array to store product quantities
+        var quantities = {};
+
+        function incrementQuantity(productId) {
+            var quantityElement = document.getElementById('quantity' + productId);
+            var currentQuantity = parseInt(quantityElement.textContent);
+            quantityElement.textContent = currentQuantity + 1;
+            updateSubtotal();
+        }
+
+        function decrementQuantity(productId) {
+            var quantityElement = document.getElementById('quantity' + productId);
+            var currentQuantity = parseInt(quantityElement.textContent);
+            if (currentQuantity > 1) {
+                quantityElement.textContent = currentQuantity - 1;
+                updateSubtotal();
+            }
+        }
+
+        function updateSubtotal() {
+            var subtotal = 0;
+
+        @foreach (var product in Model)
+        {
+            <text>
+                            var quantity@product.ProductId = parseInt(document.getElementById('quantity@product.ProductId').textContent);
+                var price@product.ProductId = @product.Price;
+                subtotal += quantity@product.ProductId * price@product.ProductId;
+                quantities[@product.ProductId] = quantity@product.ProductId; // Store quantity in the array
+            </text>
+        }
+
+                document.getElementById('subtotal').textContent = '$' + subtotal.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
