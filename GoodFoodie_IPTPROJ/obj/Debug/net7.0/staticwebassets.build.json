@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "68EyAodOsMtEQzz204BpFcKvEcLrt6KrO7dY5ey43+U=",
+  "Hash": "/24AsbIVrA5V4emcBVmM0VI211q3cFwL6T7eZgaT3XQ=",
   "Source": "GoodFoodie_IPTPROJ",
   "BasePath": "_content/GoodFoodie_IPTPROJ",
   "Mode": "Default",
@@ -2159,6 +2159,23 @@
       "OriginalItemSpec": "wwwroot\\pictures\\bg.png"
     },
     {
+      "Identity": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\bglogin.png",
+      "SourceId": "GoodFoodie_IPTPROJ",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\",
+      "BasePath": "_content/GoodFoodie_IPTPROJ",
+      "RelativePath": "pictures/bglogin.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pictures\\bglogin.png"
+    },
+    {
       "Identity": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\BURGER OVERLOAD.jpeg",
       "SourceId": "GoodFoodie_IPTPROJ",
       "SourceType": "Discovered",
@@ -2550,6 +2567,23 @@
       "OriginalItemSpec": "wwwroot\\pictures\\Ice-Cream-Sandwich.jpg"
     },
     {
+      "Identity": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\icons8-google-48.png",
+      "SourceId": "GoodFoodie_IPTPROJ",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\",
+      "BasePath": "_content/GoodFoodie_IPTPROJ",
+      "RelativePath": "pictures/icons8-google-48.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pictures\\icons8-google-48.png"
+    },
+    {
       "Identity": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\KOREAN HOTDOG.jpeg",
       "SourceId": "GoodFoodie_IPTPROJ",
       "SourceType": "Discovered",
@@ -2701,6 +2735,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\pictures\\loc.png"
+    },
+    {
+      "Identity": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\logonavbar.png",
+      "SourceId": "GoodFoodie_IPTPROJ",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\",
+      "BasePath": "_content/GoodFoodie_IPTPROJ",
+      "RelativePath": "pictures/logonavbar.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pictures\\logonavbar.png"
     },
     {
       "Identity": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\mango.jpg",
