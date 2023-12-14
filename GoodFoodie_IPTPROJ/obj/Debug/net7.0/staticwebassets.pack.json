@@ -465,12 +465,24 @@
       "PackagePath": "staticwebassets\\pictures\\bg.png"
     },
     {
+      "Id": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\bglogin.png",
+      "PackagePath": "staticwebassets\\pictures\\bglogin.png"
+    },
+    {
       "Id": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\choco.jpg",
       "PackagePath": "staticwebassets\\pictures\\choco.jpg"
     },
     {
+      "Id": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\icons8-google-48.png",
+      "PackagePath": "staticwebassets\\pictures\\icons8-google-48.png"
+    },
+    {
       "Id": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\loc.png",
       "PackagePath": "staticwebassets\\pictures\\loc.png"
+    },
+    {
+      "Id": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\logonavbar.png",
+      "PackagePath": "staticwebassets\\pictures\\logonavbar.png"
     },
     {
       "Id": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\mango.jpg",

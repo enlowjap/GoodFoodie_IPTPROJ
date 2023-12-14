@@ -5,13 +5,140 @@
     ViewData["Title"] = "Log in";
 }
 
-<h1>@ViewData["Title"]</h1>
+<style>
+    body {
+        background: url('/../pictures/bglogin.png');
+        background-size: cover;
+        background-position: center;
+        margin:0;
+        padding:0;
+    }
+
+    h1 {
+        text-align: center;
+        color: black; /* Red color similar to YouTube's logo */
+        width:165px;
+        margin:0;
+        margin-left: 34px;
+    }
+    p{
+        width:500px;
+        margin-top:10px;
+    }
+
+    .login-container {
+        margin-top: 50px;
+    }
+
+    .login-card {
+        background-color: #ffffff; /* White background */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a card-like appearance */
+    }
+
+    .login-link {
+        color: black; /* Blue color for links */
+    }
+
+    .tocontain {
+        margin: 0;
+        padding: 10px;
+        background-color: white;
+        width: 800px;
+        margin-left: -8rem;
+        margin-top: -1rem;
+        margin-bottom: -1rem;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        margin-left: 33px;
+    }
+
+    form {
+        width: 650px;
+        margin: 0;
+    }
+
+    .lgnbttn {
+        background-color: black;
+        color: white;
+    }
+
+        .lgnbttn:hover {
+            color: white;
+            background-color: maroon;
+        }
+
+    .logogl {
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+
+    .lgnggl {
+        color: black;
+        background-color: wheat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 650px;
+    }
+
+        .lgnggl:hover {
+            color: white;
+            background-color: maroon;
+        }
+
+    .plinks p a {
+        color: black;
+    }
+
+        .plinks p a:hover {
+            color: maroon;
+        }
+
+    .checked-label {
+        color: black;
+    }
+
+    .checkbox .form-check-input {
+        outline: none
+    }
+
+        .checkbox .form-check-input:checked {
+            border: 1px solid black; /* Change the border color when checked (replace with desired color) */
+            background-color: #000; /* Change the background color when checked (replace with desired color) */
+            color: #fff;
+            outline: none !important;
+        }
+        /* Styles for the focused state */
+        .checkbox .form-check-input:focus {
+            outline: none !important; /* Remove the outline for the focused state */
+        }
+
+        /* Styles for the active state */
+        .checkbox .form-check-input:active {
+            outline: none !important; /* Remove the outline for the active state */
+        }
+        .lgnbttngoogle{
+            margin-left:2rem;
+            padding:1rem;
+        }
+    </style>
+
+<div class="tocontain">
+    <h1>Welcome!</h1>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col">
         <section>
             <form id="account" method="post">
-                <h2>Use a local account to log in.</h2>
-                <hr />
+                    <p>It's a pleasure to meet you. We are excited that you're here so let's get started!'</p>
+
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                 <div class="form-floating mb-3">
                     <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
@@ -29,10 +156,13 @@
                         @Html.DisplayNameFor(m => m.Input.RememberMe)
                     </label>
                 </div>
+
                 <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                        <button id="login-submit" type="submit" class="w-100 btn btn-lg lgnbttn">Log in</button>
                 </div>
-                <div>
+
+
+                <div class="plinks">
                     <p>
                         <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
                     </p>
@@ -46,17 +176,19 @@
             </form>
         </section>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+</div>
+
+    <div class="lgnbttngoogle">
         <section>
-            <h3>Use another service to log in.</h3>
-            <hr />
             @{
                 if ((Model.ExternalLogins?.Count ?? 0) == 0)
                 {
                     <div>
                         <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
+                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">
+                                article
+                                about setting up this ASP.NET application to support logging in via external services
+                            </a>.
                         </p>
                     </div>
                 }
@@ -67,7 +199,7 @@
                             <p>
                                 @foreach (var provider in Model.ExternalLogins!)
                                 {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"> Login with @provider.DisplayName</button>
+                                    <button type="submit" class="btn btn-lg lgnggl" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"><img src="/../pictures/icons8-google-48.png" class="logogl" /> Log in with @provider.DisplayName</button>
                                 }
                             </p>
                         </div>
@@ -76,8 +208,7 @@
             }
         </section>
     </div>
-</div>
-
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+</div>
