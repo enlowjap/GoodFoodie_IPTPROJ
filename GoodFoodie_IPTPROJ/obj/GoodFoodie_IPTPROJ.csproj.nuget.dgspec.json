@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ.csproj": {}
+    "C:\\Users\\japsi\\OneDrive\\Desktop\\MockUp Project\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ.csproj": {
+    "C:\\Users\\japsi\\OneDrive\\Desktop\\MockUp Project\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ.csproj",
+        "projectUniqueName": "C:\\Users\\japsi\\OneDrive\\Desktop\\MockUp Project\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ.csproj",
         "projectName": "GoodFoodie_IPTPROJ",
-        "projectPath": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ.csproj",
-        "packagesPath": "C:\\Users\\jenny\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jenny\\Documents\\GitHub\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\obj\\",
+        "projectPath": "C:\\Users\\japsi\\OneDrive\\Desktop\\MockUp Project\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ.csproj",
+        "packagesPath": "C:\\Users\\japsi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\japsi\\OneDrive\\Desktop\\MockUp Project\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jenny\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\japsi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
