@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace GoodFoodie_IPTPROJ.Controllers
 {
-    [Authorize]
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -36,10 +36,12 @@ namespace GoodFoodie_IPTPROJ.Controllers
 
             return View(products);
         }
+        [Authorize]
         public IActionResult Menu()
         {
             return View();
         }
+        [Authorize]
         public IActionResult Cart()
         {
             return View();
