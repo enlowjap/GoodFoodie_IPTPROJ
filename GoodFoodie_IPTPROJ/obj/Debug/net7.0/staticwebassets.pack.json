@@ -357,8 +357,20 @@
       "PackagePath": "staticwebassets\\pictures\\bg.png"
     },
     {
+      "Id": "C:\\Users\\japsi\\OneDrive\\Desktop\\SIA_BACKEND\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\bglogin.png",
+      "PackagePath": "staticwebassets\\pictures\\bglogin.png"
+    },
+    {
+      "Id": "C:\\Users\\japsi\\OneDrive\\Desktop\\SIA_BACKEND\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\icons8-google-48.png",
+      "PackagePath": "staticwebassets\\pictures\\icons8-google-48.png"
+    },
+    {
       "Id": "C:\\Users\\japsi\\OneDrive\\Desktop\\SIA_BACKEND\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\loc.png",
       "PackagePath": "staticwebassets\\pictures\\loc.png"
+    },
+    {
+      "Id": "C:\\Users\\japsi\\OneDrive\\Desktop\\SIA_BACKEND\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\logonavbar.png",
+      "PackagePath": "staticwebassets\\pictures\\logonavbar.png"
     },
     {
       "Id": "C:\\Users\\japsi\\OneDrive\\Desktop\\SIA_BACKEND\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\s.png",
