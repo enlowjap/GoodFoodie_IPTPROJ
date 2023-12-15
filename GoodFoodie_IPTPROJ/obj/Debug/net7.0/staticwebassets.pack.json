@@ -357,10 +357,13 @@
       "PackagePath": "staticwebassets\\pictures\\bg.png"
     },
     {
+<<<<<<< Updated upstream
       "Id": "C:\\Users\\japsi\\OneDrive\\Desktop\\MockUp Project\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\icons8-google-48.png",
       "PackagePath": "staticwebassets\\pictures\\icons8-google-48.png"
     },
     {
+=======
+>>>>>>> Stashed changes
       "Id": "C:\\Users\\japsi\\OneDrive\\Desktop\\MockUp Project\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\loc.png",
       "PackagePath": "staticwebassets\\pictures\\loc.png"
     },

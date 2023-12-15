@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< Updated upstream
   "Hash": "ddY7SDBnkTYENpucnDp9mrdwV2UqfdMYnj2dvnc9/6c=",
+=======
+  "Hash": "0aj1xTKIrUTt3aOmP5MLU+G8WqPQrbs00MewTT8rfD8=",
+>>>>>>> Stashed changes
   "Source": "GoodFoodie_IPTPROJ",
   "BasePath": "_content/GoodFoodie_IPTPROJ",
   "Mode": "Default",
@@ -2312,6 +2316,7 @@
       "OriginalItemSpec": "wwwroot\\pictures\\HAWAIIAN.jpeg"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Users\\japsi\\OneDrive\\Desktop\\MockUp Project\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\icons8-google-48.png",
       "SourceId": "GoodFoodie_IPTPROJ",
       "SourceType": "Discovered",
@@ -2333,6 +2338,12 @@
       "SourceId": "GoodFoodie_IPTPROJ",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\japsi\\OneDrive\\Desktop\\MockUp Project\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\japsi\\OneDrive\\Desktop\\MockUp Project\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\pictures\\KOREAN HOTDOG.jpeg",
+      "SourceId": "GoodFoodie_IPTPROJ",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\japsi\\OneDrive\\Desktop\\MockUp Project\\GoodFoodie_IPTPROJ\\GoodFoodie_IPTPROJ\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/GoodFoodie_IPTPROJ",
       "RelativePath": "pictures/KOREAN HOTDOG.jpeg",
       "AssetKind": "All",
